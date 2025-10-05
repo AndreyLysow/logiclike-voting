@@ -1,7 +1,7 @@
 import 'dotenv/config';
+
 export const env = {
-  PORT: parseInt(process.env.PORT || '4000', 10),
-  DATABASE_URL: process.env.DATABASE_URL!,
-  TRUST_PROXY: (process.env.TRUST_PROXY || 'false').toLowerCase() === 'true',
-  CORS_ORIGIN: process.env.CORS_ORIGIN || '*',
+  PORT: Number(process.env.PORT ?? 4000),
+  CORS_ORIGIN: process.env.CORS_ORIGIN ?? 'http://localhost:5173',
+  TRUST_PROXY: String(process.env.TRUST_PROXY ?? 'false').toLowerCase() === 'true',
 };
